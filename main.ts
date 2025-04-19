@@ -26,5 +26,20 @@ function saludar({name, age}: {name: string, age: number}): number {
 
  saludar({name: "Guts", age: 2})
 
- //OBJETOS
+//CALLBACK Funcion que se ejecuta dentro de otra función
+ 
+ const sayHiFromFunction = (fn: (name:string) => string) => {
+    return fn('Guts')
+ }
 
+ sayHiFromFunction((name: string) => {
+    console.log(`Hola ${name}`)
+    return name
+ })
+
+
+ //Si la funcion no devuelve nada, es decir, no hay return, usamos void
+
+//  const sayHiFromFunction = (fn: (name:string) => void) => {
+//     return fn('Guts')
+//  }
